@@ -60,6 +60,9 @@ public class MainActivity extends AppCompatActivity {
         initViews();
     }
 
+    /**
+     * 初始化数据
+     */
     private void initDatas() {
         mDatas = new ArrayList<>();
 
@@ -68,6 +71,9 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * 初始化组件
+     */
     private void initViews() {
         mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
 

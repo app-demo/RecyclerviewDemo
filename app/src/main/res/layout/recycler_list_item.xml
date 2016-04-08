@@ -3,11 +3,12 @@
     android:layout_width="match_parent"
     android:layout_height="72dp"
     android:background="#44ff0000"
+    android:layout_margin="3dp"
     tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/tv_content"
-        android:layout_width="match_parent"
+        android:layout_width="72dp"
         android:gravity="center"
         android:layout_height="match_parent" />
 

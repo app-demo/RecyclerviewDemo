@@ -2,8 +2,10 @@ package com.android.recyclerview;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -86,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
         mRecyclerView.setLayoutManager(linearLayout);
 
         //设置Item View分割线
-        mRecyclerView.addItemDecoration(new DividerItemDecoration(this,LinearLayoutManager.VERTICAL));
+//        mRecyclerView.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
 
     }
 
@@ -107,6 +109,23 @@ public class MainActivity extends AppCompatActivity {
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
+        }
+
+        switch (item.getItemId()) {
+            case R.id.action_lisview:
+                mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+                break;
+            case R.id.action_gridview:
+                // 设置3列
+                mRecyclerView.setLayoutManager(new GridLayoutManager(this, 3));
+                break;
+            case R.id.action_hor_gridview:
+
+                break;
+            case R.id.action_staggered:
+                // 瀑布流: item宽度必须是固定，确切的
+                mRecyclerView.setLayoutManager(new StaggeredGridLayoutManager(5, StaggeredGridLayoutManager.HORIZONTAL));
+                break;
         }
 
         return super.onOptionsItemSelected(item);
